@@ -1,8 +1,8 @@
 # Login-Rgistration-System
-Features: HTML, CSS, Bootstrap, JQuery,
-Description: 
-If you are not a registered member, then you have to register first from the “Register” page.
-Enter Name, Username, Email Address, Password, Mobile and click “REGISTER” button to register.
+### Features: HTML, CSS, Bootstrap, JQuery,
+### Description: 
+###### If you are not a registered member, then you have to register first from the “Register” page.
+###### Enter Name, Username, Email Address, Password, Mobile and click “REGISTER” button to register.
 When you first got registered, you will automatically logged into “Home” page.
 Otherwise you have to log in from “Login” page to go “Home” page.
 Enter Email Address, Password and click “LOGIN” button to log in.
