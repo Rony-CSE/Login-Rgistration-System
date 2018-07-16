@@ -1,0 +1,54 @@
+<?php
+    $filepath = realpath(dirname(__FILE__));
+    include_once $filepath.'/../classes/Session.php';
+    Session::init();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="inc/bootstrap.min.css">
+    <script src="inc/jquery.min.js"></script>
+    <script src="inc/bootstrap.min.js"></script>
+
+    <title>Login Register System PHP</title>
+</head>
+<?php
+    if (isset($_GET['action']) && $_GET['action'] == "logout"){
+        Session::destroy();
+    }
+?>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.php">Login Register System PHP & PDO</a>
+            </div>
+
+
+                <div class="navbar-body">
+                    <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Options <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="index.php">Home</a></li>
+                            <?php
+                                $id        = Session::get("id");
+                                $userlogin = Session::get("login");
+                                if ($userlogin == true){
+                            ?>
+                            <li><a href="profile.php?id=<?php echo $id;?>">Profile</a></li>
+                            <li><a href="?action=logout">Logout</a></li>
+                            <?php } else { ?>
+                            <li><a href="login.php">Login</a></li>
+                            <li><a href="register.php">Register</a></li>
+                            <?php } ?>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    </nav>
